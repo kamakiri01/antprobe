@@ -19,13 +19,14 @@ var CITY_ARRAY_EXAMPLE = [
     {x:290,
         y:200}
 ];
-var　currentCityArrayHolder = CITY_ARRAY_EXAMPLE; //実行中の都市の座標配列を保持する
+var　currentCityArrayHolder = CITY_ARRAY_EXAMPLE; //実行中の都市の座標配列
 
 //=================================================
 // process
 //=================================================
 enchant();
 window.onload = function(){
+    var is_working = false; //frag
 
     //=================================================
     // DOM target objects
@@ -33,19 +34,19 @@ window.onload = function(){
     var statusForm = document.getElementById("form");
     statusForm.value = "wait";
     var start = document.getElementById("start");
-    start.is_working = false;
+    is_working = false;
     start.addEventListener("click", function(){
-        if(this.is_working){
+        if(is_working){
             proxy.stop();
             this.value = "start";
-            this.is_working = false;
+            is_working = false;
             statusForm.value ="stop";
             $("#create").removeAttr("disabled");
             $("#apply").removeAttr("disabled");
         }else{
             proxy.start();
             this.value = "stop";
-            this.is_working = true;
+            is_working = true;
             statusForm.value = "working";
             $("#create").attr("disabled","disabled");
             $("#apply").attr("disabled","disabled");
@@ -103,12 +104,16 @@ window.onload = function(){
                 // console.log("["+this.num+"] x:"+this.x+", y:"+this.y+" .");
             });
             c.addEventListener("touchmove", function(e){
-                this.x += (e.x - this.x)/2;
-                this.y += (e.y - this.y)/2;
+                if(is_working === false){
+                    this.x += (e.x - this.x)/2;
+                    this.y += (e.y - this.y)/2;
+                }
             });
             c.addEventListener("touchend", function(e){
-                console.log(this.num + "is touchended");
-                currentCityArrayHolder[this.num] = {x:this.x, y:this.y};
+                if(is_working === false){
+                    console.log(this.num + "is touchended");
+                    currentCityArrayHolder[this.num] = {x:this.x, y:this.y};
+                }
             });
             citySpriteArray[i] = c;
         }
