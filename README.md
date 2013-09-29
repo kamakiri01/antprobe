@@ -1,0 +1,47 @@
+antprobe.js
+==========
+
+Ant Colony Optimization by javascript. 
+
+Demo
+--------
+
+This demo need WebWorker.
+
+[Demo site](http://phasespaces.net/garage/antprobe/)
+
+Validation
+-------------
+
+- google Chrome 29
+
+How to use
+------
+
+console
+- start/stop button
+	start calculation or stop it.
+- reset buton
+	reset status to initinal state.
+- City configuration
+	-	Number of cities
+		set number of cities.(optimize your processivity.)
+-Ant configuration
+	- Ant priority heuristic 
+		set ant's criterion of heuristic. This is susceptible to distance.
+	- Ant priority pheromone
+		set ant's criterion of heuristic. This is susceptible to pheromone mapping.
+	- Ant colony scale
+		set number of ants.(optimize your processivity.)
+	- Ant pheromone density
+		set influence of one ant.
+	- Pheromone evaporation speed
+		set disappearance speed of weited routes.
+
+view
+	- Touch cities and moving, fix city position. After it, push "apply".
+
+License
+-------
+
+MIT License
