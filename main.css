@@ -1,0 +1,8 @@
+#draw-pane {
+    float: left;
+    margin-right: 40px;
+}
+
+ul.inline>li{
+  display: inline;
+}
