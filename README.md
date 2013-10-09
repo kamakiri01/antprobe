@@ -4,8 +4,8 @@ antprobe.js
 Ant Colony Optimization(ACO) by javascript. 
 
 What is ACO?
-- [ant colony optimization algorithms - wikipedia](http://en.wikipedia.org/wiki/ant_colony_optimization_algorithms)
-- [蟻コロニー最適化 - wikipedia](http://ja.wikipedia.org/wiki/%E8%9F%BB%E3%82%B3%E3%83%AD%E3%83%8B%E3%83%BC%E6%9C%80%E9%81%A9%E5%8C%96)
+- [ant colony optimization algorithms - wikipedia(en)](http://en.wikipedia.org/wiki/ant_colony_optimization_algorithms)
+- [蟻コロニー最適化 - wikipedia(ja)](http://ja.wikipedia.org/wiki/%E8%9F%BB%E3%82%B3%E3%83%AD%E3%83%8B%E3%83%BC%E6%9C%80%E9%81%A9%E5%8C%96)
 
 Demo
 --------

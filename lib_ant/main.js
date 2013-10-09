@@ -3,7 +3,7 @@
 //=================================================
 var STAGE_WIDTH = 512;
 var STAGE_HEIGHT = 512;
-var CITY_SIZE = 3;
+var CITY_SIZE = 5;
 var STAGE_BACKGROUND_COLOR = "lightgray";
 var CITY_ARRAY_EXAMPLE = [
     {x:10,

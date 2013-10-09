@@ -2,9 +2,7 @@
  * antprobe
  *
  */
-
-var DIR = "./lib_ant/";
-
+var DIR = "./lib_ant/"; //relation from .html
 var debugMode = false;
 var ANT_COLONY_SCALE = 50;
 var ANT_PRIORITY_PHEROMONE = 4;
@@ -21,21 +19,16 @@ var antprobe = (function(){
             this.is_working =null; //::bool
             this.stepCount = null; //::[Int]
         };
-        
         var AntsEntity = function(){
             this.count = 0; //:: Int    //ant world clock
             this.ants = null;   //::[Ant]
-            
             this.cityList = null;   //::[{x:float,y:float}]
             this.cityDistance = null;   //[[int]]
             this.cityDistanceHeuristic = null; //inverse of cityDistance
             this.pheromoneMap = null;   //[int]]
             this.antPaintingDensity = null; //[int]
-
-//            this.evaporation = PHEROMONE_EVAPORATION; //::float 蒸発係数
             this.evaporation = null; //::float 蒸発係数
         };
-
         var AntConfiguration = function(){
             this.cityList = null;
             this.ant_priority_heuristic = null;
@@ -44,7 +37,6 @@ var antprobe = (function(){
             this.antPaintingDensity = null;
             this.pheromone_evaporation = null;
         };
-
         var Ant = function(pherom, dist){
             this.isActive = null;   //::bool
             this.isRepat = true;   //:bool
@@ -55,19 +47,14 @@ var antprobe = (function(){
             this.cityValues = null; //::[int]   //user choise nextCity
             this.currentCity = null;    //::[int]
             this.nextCity = null;
-
             this.trailedCityStack = null;// [int] CityId ordList 
-
             this.parentEntity = null;
-
             this.cityDistance = null;   //get from antEntity when onload.
-            
         };
 
 /*
  * Proxyのメソッド
  */
-
         /*
          * 設定パラメータを変更する
          *
@@ -243,9 +230,9 @@ var antprobe = (function(){
             for(var i=0;i<data.ant_colony_scale;i++){
                 this.ants[i] = new Ant(data.ant_priority_pheromone, 
                         data.ant_priority_heuristic);
-                this.ants[i].onload(this);
+                this.ants[i].onload(this, i % this.cityList.length);
+                //Antのスタート地点は個体ごとに異なる
             }
-            
         };
         /*
          * 実体の初期化
@@ -427,11 +414,11 @@ var antprobe = (function(){
         /*
          * 起動時のメソッド
          */
-        Ant.prototype.onload = function(antEntityInstance){
+        Ant.prototype.onload = function(antEntityInstance, startCityNum){
             this.isActive = true;
             this.parentEntity = antEntityInstance;
 
-            this.startCityId = 0;
+            this.startCityId = startCityNum;
             this.cityValues = [];
 
             var l = antEntityInstance.cityList.length;
@@ -441,7 +428,7 @@ var antprobe = (function(){
             }
             sendMessage("logd", "[Ant.onload]cityList length is "+ l);
 
-            this.currentCity = 0;   //always, start from 0 city.
+            this.currentCity = startCityNum;   //always, start from 0 city.
             this.untrailedCityList[0] = true;
             this.trailedCityStack = [];
         };
