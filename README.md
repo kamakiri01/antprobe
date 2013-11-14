@@ -19,7 +19,7 @@ Validation
 
 - google Chrome 29
 
-How to use
+How to use Demo
 ------
 
 console

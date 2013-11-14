@@ -462,7 +462,7 @@ var antprobe = (function(){
             if(this.isActive === true){
                 this.untrailedCityList[this.currentCity] = true; //double check
                 //次の都市が代入されていないかスタート都市と同じのとき
-                if(this.nextCity == null || this.nextCity === undefined || this.nextCity == this.startCityId){
+                if(this.nextCity === null || this.nextCity === undefined || this.nextCity === this.startCityId){
                     if(this.isRepat === false){
                         //繰り返さないとき
                         this.isActive = false;
