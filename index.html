@@ -36,7 +36,7 @@
                             <ul class="inline">
                                 <li>Number of cities</li>
                                 <!--<li><input type="text" value="5" id="cityCount" /></li>-->
-                                <li><input type="range" value="4" id="cityCount" min="1" max="50">
+                                <li><input type="range" value="4" id="cityCount" min="1" max="100">
                                 <span id="cityCountNum"></span>
                             </ul>
                     </fieldset>
@@ -46,12 +46,12 @@
                         <legend>Ant configuration<input type="button" value="apply" id="apply" /></legend>
                         <ul class="inline">
                             <li>Ant priority heuristic</li>
-                            <li><input type="range" value="7" id="ant_priority_heuristic" />
+                            <li><input type="range" min="0.1" max="5.0" step="0.2" value="0.5" id="ant_priority_heuristic" />
                             <span id="ant_priority_heuristic_num"></span></li>
                         </ul>
                         <ul class="inline">
                             <li>Ant priority pheromone</li>
-                            <li><input type="range" value="2" id="ant_priority_pheromone" />
+                            <li><input type="range" min="0.1" max="5.0" step="0.2" value="5.0" id="ant_priority_pheromone" />
                             <span id=ant_priority_pheromone_num></span></li>
                         </ul>
                         <ul class="inline">
@@ -67,7 +67,7 @@
                         </ul>
                         <ul class="inline">
                             <li>Pheromone evaporation speed</li>
-                            <li><input type="range" min="0.1" max="0.9" step="0.1" value="0.6" id="pheromone_evaporation" />
+                            <li><input type="range" min="0.1" max="0.9" step="0.1" value="0.5" id="pheromone_evaporation" />
                             <span id="pheromone_evaporation_num"></span></li>
                         </ul>
                     </fieldset>

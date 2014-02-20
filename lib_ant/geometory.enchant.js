@@ -27,6 +27,25 @@ var Circle = enchant.Class.create(enchant.Sprite, {
     }
 });
 
+var Triangle = enchant.Class.create(enchant.Sprite, {
+    initialize: function(side, color){
+        enchant.Sprite.call(this, 
+            side/Math.cos(Math.PI/6), 
+            side/Math.cos(Math.PI/6));
+        var tl = side/Math.cos(Math.PI/6);
+        var sf = new Surface(tl,tl);
+        this.image = sf;
+        this.sCtx = sf.context;
+        if(color === undefined){
+            color = 'rgba(192, 192, 192, 1)';
+        }
+        this.drawColor = color;
+        this.reflesh(tl);
+    },
+    reflesh: function(rad){
+    }
+});
+
 var LineLayer = enchant.Class.create(enchant.Sprite, {
     initialize: function(){
         enchant.Sprite.call(this, 

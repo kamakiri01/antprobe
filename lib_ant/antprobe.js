@@ -7,6 +7,7 @@ var debugMode = false; //output status to console
 var ANT_COLONY_SCALE = 50; //default computation scale
 var ANT_PRIORITY_PHEROMONE = 4; //criterion of heuristic
 var ANT_PRIORITY_HEURISTIC = 4; //criterion of weiht 
+var PHEROMONE_INIT_DENSITY = 5; //fisrt pheromone status
 var PHEROMONE_EVAPORATION = 0.6; //disappearance speed of weited routes
 var ANT_PAINT_DENSITY = 1; //influence of one ant
 var HEURISTIC_SCALE = 5; //adujust heuristic effect 
@@ -391,7 +392,7 @@ var antprobe = (function(){
             for(var i=0;i<l;i++){
                 this.pheromoneMap[i] = [];
                 for(var j=0;j<l;j++){
-                    this.pheromoneMap[i][j] = 0.1;    //default pheromone.
+                    this.pheromoneMap[i][j] = PHEROMONE_INIT_DENSITY;    //default pheromone.
                 }
             }
             sendMessage("logd", "[Entity]reset PheromoneMap success " + this.pheromoneMap[0][0]);

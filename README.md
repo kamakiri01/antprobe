@@ -22,6 +22,8 @@ Validation
 How to use Demo
 ------
 
+*push start, try recet.*
+
 console
 - start/stop button
 	- start calculation or stop it.
