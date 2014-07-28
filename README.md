@@ -28,17 +28,22 @@ Validation
 How to use Demo
 ------
 
-*push start, fix value, try recet.*
+*push start*
+
 
 console
-- start/stop button
-	- start calculation or stop it.
-- reset buton
+- **start/stop**
+	- start or stop calculation.
+- **reset**
 	- reset status to initinal state.
 - City configuration
+    - **adittion**
+        - apply custom city number.
 	- Number of cities
 		- set number of cities.(optimize your processivity.)
 - Ant configuration
+    - **apply**
+        - apply custom configuration.
 	- Ant priority heuristic 
 		- set ant's criterion of heuristic. This is susceptible to distance.
 	- Ant priority pheromone
