@@ -2,6 +2,7 @@ antprobe.js
 ==========
 
 Ant Colony Optimization(ACO) by Javascript. 
+
 蟻コロニー最適化法による巡回サラリーマン問題解法のJavaScript実装。
 
 
